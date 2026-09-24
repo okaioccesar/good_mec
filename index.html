@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Etapa 1: metadados e arquivos locais. Nenhuma biblioteca externa é necessária. -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#142d48">
+  <title>GoodMec | Gestão da oficina</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="modelo.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <!-- Etapa 2: navegação. Os botões trocam a seção visível sem recarregar a página. -->
+  <aside class="lateral">
+    <a class="marca" href="#painel" aria-label="GoodMec — visão geral"><img src="logo.svg" alt="GoodMec" width="300" height="72"></a>
+    <p class="submarca">Sua oficina, em ordem.</p>
+    <nav aria-label="Navegação principal">
+      <button type="button" data-pagina="painel" aria-current="page"><span aria-hidden="true">01</span>Visão geral</button>
+      <button type="button" data-pagina="ordens"><span aria-hidden="true">02</span>Ordens de serviço</button>
+      <button type="button" data-pagina="clientes"><span aria-hidden="true">03</span>Clientes e veículos</button>
+      <button type="button" data-pagina="agenda"><span aria-hidden="true">04</span>Agenda e retornos</button>
+      <button type="button" data-pagina="pecas"><span aria-hidden="true">05</span>Peças e compras</button>
+      <button type="button" data-pagina="atendimento"><span aria-hidden="true">06</span>Atendimento</button>
+      <button type="button" data-pagina="relatorios"><span aria-hidden="true">07</span>Indicadores</button>
+      <button type="button" data-pagina="configuracoes"><span aria-hidden="true">08</span>Oficina e equipe</button>
+    </nav>
+    <div class="lateral-rodape"><span class="ponto"></span> Protótipo local<span>Feito para simplificar o dia a dia.</span></div>
+  </aside>
+
+  <div class="aplicacao">
+    <header class="barra-superior">
+      <div><p class="sobretitulo">GESTÃO DA OFICINA</p><h1 id="titulo-pagina">Visão geral</h1></div>
+      <div class="acoes-topo"><span id="data-hoje"></span><button type="button" class="primario" data-acao="nova-ordem">+ Nova ordem</button></div>
+    </header>
+    <div class="aviso-local"><span id="situacao-dados">Dados salvos somente neste navegador. Faça uma cópia em Oficina e equipe.</span><span class="selo">HTML · CSS · JavaScript</span></div>
+    <main id="conteudo" tabindex="-1">
+      <!-- Etapa 3: cada seção possui um espaço preenchido pelo JavaScript. -->
+      <section id="pagina-painel" class="pagina" aria-label="Visão geral"><div id="painel-conteudo"></div></section>
+      <section id="pagina-ordens" class="pagina" aria-label="Ordens de serviço" hidden>
+        <div class="cabecalho-secao"><div><h2>Do primeiro diagnóstico à entrega.</h2><p>Todos os atendimentos e suas próximas etapas.</p></div></div>
+        <div class="filtros">
+          <label>Buscar ordem<input id="busca-ordens" type="search" placeholder="Número, cliente, placa ou veículo"></label>
+          <label>Situação<select id="filtro-status"><option value="">Todas as situações</option></select></label>
+          <label>Atenção<select id="filtro-atencao"><option value="">Todas</option><option value="atraso">Previsão vencida</option><option value="peca">Aguardando peça</option><option value="aprovacao">Aguardando aprovação</option></select></label>
+        </div>
+        <p id="contagem-ordens" class="texto-suave" aria-live="polite"></p>
+        <div id="lista-ordens" class="grade-ordens"></div>
+      </section>
+      <section id="pagina-clientes" class="pagina" aria-label="Clientes e veículos" hidden>
+        <div class="cabecalho-secao"><div><h2>Conheça quem passa pela oficina.</h2><p>Contatos, veículos e histórico de serviços juntos.</p></div><div class="acoes"><button type="button" class="secundario" data-acao="novo-veiculo">+ Veículo</button><button type="button" class="primario" data-acao="novo-cliente">+ Cliente</button></div></div>
+        <label class="busca">Buscar cliente ou veículo<input id="busca-clientes" type="search" placeholder="Nome, telefone, modelo ou placa"></label>
+        <div id="lista-clientes" class="grade-clientes"></div>
+      </section>
+      <section id="pagina-agenda" class="pagina" aria-label="Agenda e retornos" hidden>
+        <div class="cabecalho-secao"><div><h2>Prepare os próximos atendimentos.</h2><p>Solicitações de horário e lembretes de manutenção.</p></div><button type="button" class="primario" data-acao="novo-agendamento">+ Agendar atendimento</button></div>
+        <div class="duas-colunas"><section class="cartao"><h3>Agendamentos</h3><div id="lista-agenda"></div></section><section class="cartao"><h3>Retornos recomendados</h3><p class="texto-suave">Criados ao indicar uma data de retorno no relatório.</p><div id="lista-lembretes"></div></section></div>
+      </section>
+      <section id="pagina-pecas" class="pagina" aria-label="Peças e compras" hidden>
+        <div class="cabecalho-secao"><div><h2>A peça certa, na hora certa.</h2><p>Acompanhe as peças incluídas nos orçamentos e sua previsão de chegada.</p></div></div>
+        <div id="lista-pecas"></div>
+      </section>
+      <section id="pagina-atendimento" class="pagina" aria-label="Atendimento" hidden>
+        <div class="cabecalho-secao"><div><h2>Informação clara para o cliente.</h2><p>Experimente as consultas e acompanhe os pedidos de atendimento.</p></div><span class="selo amarelo">Simulação de WhatsApp</span></div>
+        <p class="nota">Esta é uma demonstração local. Não há envio de mensagens nem verificação real de identidade. A integração com WhatsApp e a autenticação serão feitas no back end.</p>
+        <div class="duas-colunas">
+          <section class="cartao">
+            <h3>Simulador do cliente</h3>
+            <label for="bot-cliente">Cliente simulado<select id="bot-cliente"></select></label>
+            <label for="bot-ordem">Atendimento a consultar<select id="bot-ordem"></select></label>
+            <div id="conversa" class="conversa" role="log" aria-live="polite" aria-label="Conversa de demonstração"></div>
+            <div class="atalhos"><button type="button" class="secundario" data-bot="status">Consultar situação</button><button type="button" class="secundario" data-bot="orcamento">Ver orçamento</button><button type="button" class="secundario" data-bot="relatorio">Ver relatório</button><button type="button" class="secundario" data-bot="humano">Falar com a oficina</button></div>
+            <form id="form-bot" class="linha-envio"><label class="sr-only" for="bot-texto">Mensagem</label><input id="bot-texto" maxlength="300" placeholder="Digite uma pergunta..." required><button class="primario" type="submit">Enviar</button></form>
+            <div id="bot-anexos"></div>
+          </section>
+          <div class="pilha"><section class="cartao"><h3>Atendimento humano</h3><div id="lista-atendimentos"></div></section><section class="cartao"><h3>Prévias de notificações</h3><p class="texto-suave">Geradas nas etapas importantes. Nenhuma foi enviada.</p><div id="lista-avisos"></div></section></div>
+        </div>
+      </section>
+      <section id="pagina-relatorios" class="pagina" aria-label="Indicadores" hidden><div id="indicadores-conteudo"></div></section>
+      <section id="pagina-configuracoes" class="pagina" aria-label="Oficina e equipe" hidden>
+        <div class="cabecalho-secao"><div><h2>O jeito da sua oficina.</h2><p>Informações usadas nos relatórios e na organização da equipe.</p></div></div>
+        <div class="duas-colunas">
+          <form id="form-config" class="cartao">
+            <h3>Dados da oficina</h3>
+            <label>Nome da oficina<input name="oficina" required maxlength="80"></label>
+            <label>Telefone de contato<input name="telefone" type="tel" maxlength="30"></label>
+            <label>Endereço<input name="endereco" maxlength="200"></label>
+            <label>Nome de quem está operando<input name="operador" required maxlength="80"></label>
+            <p class="texto-suave">Este nome identifica as alterações no histórico local. Não é uma conta autenticada.</p>
+            <button class="primario" type="submit">Salvar informações</button>
+          </form>
+          <div class="pilha">
+            <section class="cartao"><h3>Equipe</h3><p class="texto-suave">Perfis organizam as funções. Controle de acesso real será feito no back end.</p><div id="lista-equipe"></div><form id="form-equipe" class="grade-formulario"><label>Nome<input name="nome" required maxlength="80"></label><label>Função<select name="perfil"><option>Administrador</option><option>Atendimento</option><option>Mecânico</option></select></label><button class="secundario" type="submit">Adicionar à equipe</button></form></section>
+            <section class="cartao"><h3>Cópia dos dados</h3><p>Exporte seus registros antes de trocar de navegador. A importação substitui a base atual após sua confirmação.</p><div class="acoes"><button class="secundario" type="button" data-acao="exportar">Exportar cópia</button><button class="secundario" type="button" data-acao="importar">Importar cópia</button><button id="recuperar-originais" class="secundario" type="button" data-acao="exportar-recuperacao" hidden>Baixar dados originais para recuperação</button></div><input id="arquivo-importacao" type="file" accept=".json,application/json" hidden></section>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="rodape">GoodMec <span>Menos papel. Mais tempo para cuidar de cada veículo.</span></footer>
+  </div>
+
+  <!-- Etapa 4: dialog é uma janela nativa do HTML, com foco e teclado tratados pelo navegador. -->
+  <dialog id="modal" aria-labelledby="modal-titulo">
+    <div class="modal-topo"><div><p class="sobretitulo" id="modal-subtitulo">GOODMEC</p><h2 id="modal-titulo" tabindex="-1"></h2></div><button type="button" class="fechar" data-acao="fechar-modal" aria-label="Fechar janela">×</button></div>
+    <div id="modal-corpo"></div>
+    <p id="erro-modal" class="erro" role="alert" hidden></p>
+  </dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <!-- Etapa 5: área exclusiva de impressão, preenchida com os dados do relatório. -->
+  <article id="impressao" hidden></article>
+  <noscript><p class="nota">Ative o JavaScript no navegador para usar os cadastros da GoodMec.</p></noscript>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 72" role="img" aria-labelledby="titulo-logo">
+  <title id="titulo-logo">GoodMec</title>
+  <!-- O quadrado laranja destaca o símbolo da oficina. -->
+  <rect x="0" y="4" width="64" height="64" rx="14" fill="#f59e0b"/>
+  <!-- A letra G branca substitui o símbolo da ferramenta. -->
+  <text x="32" y="53" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="44" font-weight="700">G</text>
+  <!-- Nome da oficina, à direita do símbolo. -->
+  <text x="82" y="49" fill="white" font-family="Arial, sans-serif" font-size="36" font-weight="700">GoodMec</text>
+</svg>

@@ -1,0 +1,10 @@
+node_modules/
+*.log
+
+# Credenciais locais de futuras integrações não devem ir para o GitHub.
+.env
+.env.*
+!.env.example
+
+# Cópias exportadas pelo aplicativo podem conter dados de clientes.
+goodmec-*.json

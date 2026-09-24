@@ -1,0 +1,12 @@
+{
+  "name": "goodmec",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Protótipo em HTML, CSS e JavaScript. Node é usado somente nos testes.",
+  "scripts": {
+    "test": "node --test testes/*.test.js"
+  },
+  "devDependencies": {
+    "jsdom": "26.1.0"
+  }
+}
