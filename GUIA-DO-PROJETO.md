@@ -6,6 +6,8 @@ Abra `index.html` no navegador. O site funciona com arquivos locais: não precis
 
 Na primeira abertura, a base começa vazia. Use **Nova ordem** para cadastrar um atendimento ou **Explorar com exemplos** para carregar três atendimentos fictícios. Os exemplos estão identificados nas ordens.
 
+O primeiro back end Java está em `backend/`. Consulte o [guia do back end](backend/README.md) para executá-lo no IntelliJ e estudar as classes. Nesta etapa ele é uma API independente, com dados temporários em memória; as telas descritas neste guia continuam usando os dados do navegador.
+
 ## O que já funciona
 
 | Área | Recursos |

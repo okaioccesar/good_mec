@@ -8,3 +8,9 @@ node_modules/
 
 # Cópias exportadas pelo aplicativo podem conter dados de clientes.
 goodmec-*.json
+
+# Arquivos locais do IntelliJ e resultado da compilação Java.
+.idea/
+*.iml
+*.class
+backend/out/
