@@ -3,6 +3,7 @@
 Projeto de aprendizado para gerenciar uma oficina mecânica. O front end usa HTML, CSS e JavaScript; o primeiro back end usa Java 21 sem framework.
 
 - [Guia do front end e das regras da oficina](GUIA-DO-PROJETO.md)
+- [Guia de estudo completo: HTML, CSS, JavaScript, testes e Java](GUIA-DE-ESTUDO-COMPLETO.md)
 - [Back end: abrir no IntelliJ, executar e estudar o código](backend/README.md)
 - [Guia de Git e GitHub](GUIA-GIT.md)
 
