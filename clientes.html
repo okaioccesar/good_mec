@@ -1,0 +1,76 @@
+<!DOCTYPE html> <!-- avisa ao navegador que é HTML5 -->
+<html lang="pt-BR"> <!-- Idioma da página -->
+<head>
+  <meta charset="UTF-8"> <!-- faz acentos e "ç" aparecerem certos -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <!-- "viewport" essencial para a página funcionar bem no celular -->
+  <title>GoodMec - Clientes</title>
+  <link rel="stylesheet" href="css/style.css">
+   <!-- <link> do CSS no <head> e <script> do JS no final do <body>: é o padrão. O JS carrega por último para a página já existir quando ele rodar. -->
+</head>
+<body>
+
+  <header>
+  <!-- <header>, <nav>, <main>, <footer>: tags semânticas. Elas dizem o que cada bloco é, em vez de usar <div> para tudo. -->
+    <h1>GoodMec</h1>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="clientes.html">Clientes</a>
+      <a href="veiculos.html">Veículos</a>
+      <a href="ordens.html">Ordens de Serviço</a>
+      <a href="orcamentos.html">Orçamentos</a>
+      <a href="agenda.html">Agenda</a>
+      <a href="pecas.html">Peças</a>
+      <a href="relatorios.html">Relatórios</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- label for="nome" + input id="nome": ligam o texto ao campo (clicar no texto já foca o campo). -->
+    <h2>Cadastro de Clientes</h2>
+    <form id="form-cliente">
+    <!-- name: vai ser útil quando o backend receber os dados. -->
+      <label for="nome">Nome completo:</label>
+      <input type="text" id="nome" name="nome" required> 
+    <!-- required: o navegador impede o envio se estiver vazio -->
+    <!-- type="tel" o celular mostra o teclado certo. -->
+      <label for="telefone">Telefone:</label>
+      <input type="tel" id="telefone" name="telefone" required>
+    <!-- type="email" e-mail é validado sozinho. -->
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="CPF">CPF:</label>
+      <input type="text" id="CPF" name="CPF" required>
+
+      <label for="observacoes">Observações:</label>
+      <textarea id="observacoes" name="observacoes" rows="3"></textarea>
+
+      <button type="submit">Salvar </button>
+    </form>
+
+    <h3>Clientes cadastrados</h3>
+    <table id="tabela-clientes">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Email</th>
+                <th>CPF</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- mais adiante o JavaScript irá inserir os dados dos clientes -->
+            <!-- Os dados dos clientes serão inseridos aqui dinamicamente -->
+        </tbody>
+    </table>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 GoodMec. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
