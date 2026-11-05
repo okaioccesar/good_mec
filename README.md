@@ -1,6 +1,6 @@
 # GoodMec
 
-Projeto de aprendizado para gerenciar uma oficina mecânica. O front end usa HTML, CSS e JavaScript; o primeiro back end usa Java 21 sem framework.
+Projeto de aprendizado para gerenciar uma oficina mecânica. O front end usa HTML, CSS e JavaScript; o primeiro backend usa Java 
 
 O front end pode ser aberto pelo `index.html` e mantém os registros no navegador. A API Java é uma etapa independente de estudo, com cadastros temporários em memória; a integração entre as duas partes ainda será implementada.
 
