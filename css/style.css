@@ -1,0 +1,164 @@
+/* ==== Variáveis (cores e medidas em um lugar só) ==== */
+:root {
+    --cor-principal: #1f3a5f;
+    --cor-destaque: #e8a317;
+    --cor-fundo: #f4f6f9;
+    --cor-texto: #222;
+    --cor-borda: #d0d7e2;
+    --raio: 8px;
+
+}
+/* ==== :root + var(--...): guarda as cores em variáveis. Para mudar o tema inteiro, você edita só ali. ==== */
+/* ==== Reset básico ==== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* ==== box-sizing: border-box: faz o width incluir o padding, o que evita muita dor de cabeça com tamanhos. ==== */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.5;
+}
+
+/* ==== Cabeçalho ==== */
+header {
+    background: var(--cor-principal);
+    color: #fff;
+    padding: 1rem 1.5rem;
+}
+
+header h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--raio);
+}
+
+nav a:hover {
+    background: var(--cor-destaque);
+    color: #000;
+}
+
+/* ==== Conteúdo principal ==== */
+main {
+    max-width: 1000px;
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+}
+
+main h2 {
+    margin-bottom: 1rem;
+}
+
+main h3 {
+    margin: 2rem 0 0.8rem;
+}
+
+/* ==== Formulários ==== */
+form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.8rem 1rem;
+    background: #fff;
+    padding: 1.2rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+}
+/* ==== display: flex no menu e display: grid no formulário: o layout se organiza sozinho. O auto-fit + minmax(220px, 1fr) faz os campos ficarem em colunas no computador e empilharem no celular, sem precisar de regra especial. ==== */
+label {
+    display: block;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.55rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    font-size: 1rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid var(--cor-destaque);
+}
+
+button {
+    background: var(--cor-principal);
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: var(--raio);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #2c5282
+}
+
+/* ==== Tabelas ==== */
+.tabela-wrapper {
+    overflow-x: auto; /*rolagem horizontal para telas pequenas*/
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+th,
+td {
+    padding: 0.7rem;
+    text-align: left;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+th {
+    background: var(--cor-principal);
+    color: #fff;
+}
+
+tbody tr:hover {
+    background: #eef2f7;
+}
+
+/* ==== Rodapé ==== */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* ==== Celular ==== */
+/* ==== @media (max-width: 600px): regras que só valem em tela pequena. ==== */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.3rem;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+    }
+}   
